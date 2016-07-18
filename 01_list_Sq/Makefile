@@ -4,7 +4,7 @@ CC=g++
 
 src = $(wildcard *.cpp)
 obj = $(patsubst %.cpp,%.o,$(src))
-target = list_Sq
+target = app
 
 $(target):$(obj)
 	$(CC) $^ $(LDFLAGS) -o $@

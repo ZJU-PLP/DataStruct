@@ -1,18 +1,18 @@
 #ifndef __LIST_H__
 #define __LIST_H__
 
-#define LIST_INIT_SIZE 100      //顺序表的初始分配最大容量
-#define LISTINCREAMENT 10	    //(默认)增补空间量
+#define LIST_INIT_SIZE 100                          //顺序表的初始分配最大容量
+#define LISTINCREAMENT 10	                        //(默认)增补空间量
 
-typedef int ElemType;		    //类型重定义
+typedef int ElemType;		                        //类型重定义
 
 typedef struct
 {
-	ElemType *elem;			    //顺序表元素
-	int length;				    //顺序表长度
-	int listsize;			    //当前分配数组容量
-	int increamentsize;		    //增补空间量(以ElemType为单位)
-}SqList;					    //动态顺序表
+	ElemType *elem;			                        //顺序表元素
+	int length;				                        //顺序表长度
+	int listsize;			                        //当前分配数组容量
+	int increamentsize;		                        //增补空间量(以ElemType为单位)
+}SqList;					                        //动态顺序表
 
 
 //初始化线性表

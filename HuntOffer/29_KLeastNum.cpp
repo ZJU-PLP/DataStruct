@@ -39,11 +39,11 @@ void GetLeastNum(int *num, int n, int *output, int k)
     if(num == NULL || output == NULL || k > n || n <= 0 || k <= 0)
         return;
     int start = 0;
-    int end = n-1;
+    int end = n - 1;
     int index = Partition(num, n, start, end);
-    while(index != k-1)
+    while(index != k - 1)
     {
-        if(index > k-1) //划分左侧
+        if(index > k - 1) //划分左侧
         {
             end = index - 1;
             index = Partition(num, n, start, end);
@@ -81,7 +81,6 @@ void GetLeastNum(const vector<int> &data, intSet& leastNum, int k)
         }
     }
 }
-
 
 int main()
 {

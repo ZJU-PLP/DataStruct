@@ -1,10 +1,3 @@
-/*************************************************************************
-	> File Name: revsemax.cpp
-	> Author: 
-	> Mail: 
-	> Created Time: 2016年07月28日 星期四 10时48分19秒
- ************************************************************************/
-
 #include<iostream>
 using namespace std;
 
@@ -30,7 +23,6 @@ int revsemax(int *num, int len)
         }
         tmparr[i] = maxnum;
     }
-
     //找到最大的数字
     maxnum = 1;
     for(int i=1; i<len; ++i)

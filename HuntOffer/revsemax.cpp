@@ -1,4 +1,10 @@
+/*
+ * 最长递减子序列问题
+ * 典型动态规划问题
+*/
+
 #include<iostream>
+
 using namespace std;
 
 int revsemax(int *num, int len)

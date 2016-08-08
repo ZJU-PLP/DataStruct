@@ -1,9 +1,5 @@
-/*************************************************************************
-	> File Name: 1_includes.cpp
-	> Author: 
-	> Mail: 
-	> Created Time: 2016年08月02日 星期二 10时25分24秒
- ************************************************************************/
+
+//includes函数
 
 #include<iostream>
 #include <algorithm>    // std::includes, std::sort
@@ -32,4 +28,5 @@ int main ()
         std::cout << "包含子序列!\n";
     return 0;
 }
+
 

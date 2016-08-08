@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+//"桶" 
 char FirstNotRepeat(char *str)
 {
     if(str == NULL) return '\0';
@@ -26,3 +27,5 @@ int main()
     cout << FirstNotRepeat(p) << endl;
     return 0;
 }
+
+

@@ -11,8 +11,8 @@
 using namespace std;
 
 int queens(int n);
-void permutation(int *ColumnIndex, int start, int n, int &solutionNumber);
-bool satisfyQueenRequirements(int *, int);
+void permutation(int *str, int start, int n, int &rtNumber);
+bool isRight(int *, int);
 
 int queens(int n)           //n皇后问题
 {
@@ -27,18 +27,18 @@ int queens(int n)           //n皇后问题
 }
 
 //全排列
-void permutation(int *ColumnIndex, int start, int n, int &solutionNumber)
+void permutation(int *str, int start, int n, int &rtNumber)
 {        
-    if(ColumnIndex == NULL) return;
+    if(str == NULL) return;
 
     if(start == n-1)
     {
         //检查输出
-        if(satisfyQueenRequirements(ColumnIndex, n))
+        if(isRight(str, n))
         {
-            solutionNumber++;
+            rtNumber++;
             for(int k = 0; k < n; k++)
-                cout<< ColumnIndex[k] << ' ';
+                cout<< str[k] << ' ';
             cout << endl;
         }
         return;
@@ -46,26 +46,26 @@ void permutation(int *ColumnIndex, int start, int n, int &solutionNumber)
 
     for(int i = start; i<n; i++)
     {
-        int temp = ColumnIndex[start];
-        ColumnIndex[start] = ColumnIndex[i];
-        ColumnIndex[i] = temp;
+        int temp = str[start];
+        str[start] = str[i];
+        str[i] = temp;
 
-        permutation(ColumnIndex, start+1, n, solutionNumber);
+        permutation(str, start+1, n, rtNumber);
 
-        temp = ColumnIndex[start];
-        ColumnIndex[start] = ColumnIndex[i];
-        ColumnIndex[i] = temp;
+        temp = str[start];
+        str[start] = str[i];
+        str[i] = temp;
     }
 }
 
-bool satisfyQueenRequirements(int *ColumnIndex, int n)
+bool isRight(int *str, int n)
 {
     bool result = true;
     for(int i=0; i<n; i++)
     {
         for(int j=0;j<n;j++)
         {
-            if( i!=j && abs(i-j) == abs(ColumnIndex[i]-ColumnIndex[j]))
+            if( i!=j && abs(i-j) == abs(str[i]-str[j]))
             {
                 result = false;
                 return result;

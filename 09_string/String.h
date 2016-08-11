@@ -24,6 +24,4 @@ void StrReplace_Sq(DSqString &S,DSqString T,DSqString V);
 void StrTravers_Sq(DSqString S);
 void DestroyString_Sq(DSqString &S);
 
-
-
 #endif

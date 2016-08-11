@@ -1,12 +1,5 @@
-/*************************************************************************
-	> File Name: 04_list_link.cpp
-	> Author: Robin
-	> Mail: chou_robin@163.com 
-	> Created Time: 2016年06月19日 星期日 09时51分58秒
-	> From: 剑指offer
- ************************************************************************/
-
 #include<iostream>
+#include <stack>
 using namespace std;
 
 struct ListNode
@@ -18,7 +11,7 @@ struct ListNode
 
 void AddToTail(ListNode** pHead, int value)
 {
-	ListNode* pNew = new ListNode();
+	ListNode* pNew = new ListNode;
 	pNew->m_nValue = value;
 	pNew->m_pNext = NULL;
 
@@ -34,7 +27,6 @@ void AddToTail(ListNode** pHead, int value)
 		pNode->m_pNext = pNew;
 	}
 }
-
 
 void RemoveNode(ListNode ** pHead, int value)
 {
@@ -66,13 +58,9 @@ void RemoveNode(ListNode ** pHead, int value)
 	}
 }
 
-
-#include <stack>
-
 //逆序打印链表
 void ReversPrint(ListNode **pHead)
 {
-	
 	stack<ListNode*> sk;
 	ListNode* pNode = *pHead;
 	while(pNode != NULL)
@@ -80,7 +68,6 @@ void ReversPrint(ListNode **pHead)
 		sk.push(pNode);
 		pNode = pNode->m_pNext;
 	}
-	
 	cout<< "ReversPrint :" << endl;
 	//打印并且出栈
 	while(!sk.empty())
@@ -90,7 +77,6 @@ void ReversPrint(ListNode **pHead)
 	}
 	cout<<endl;
 }
-
 
 void Recur(ListNode **pHead)
 {
@@ -118,9 +104,4 @@ int main()
 
 	return 0;
 }
-
-
-
-
-
 

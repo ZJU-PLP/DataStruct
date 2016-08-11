@@ -17,7 +17,7 @@ $(target):$(obj)
 #彻底清除生生过程文件
 clean:
 	-rm -f *.o
-	-rm -f app
+	-rm -f str
 
 #彻底清除生生过程文件和生成配置文件
 distclean:

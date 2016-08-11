@@ -1,10 +1,3 @@
-/*************************************************************************
-	> File Name: bigint.cpp
-	> Author: 
-	> Mail: 
-	> Created Time: 2016年08月03日 星期三 14时38分54秒
- ************************************************************************/
-
 #include <iostream>
 #include <vector>
 #include <string>
@@ -20,12 +13,12 @@ public:
     BigInt(string str);
     BigInt(const BigInt& a);
 
-    friend BigInt operator+(BigInt a,BigInt b);             //
-    friend BigInt operator-(BigInt a,BigInt b);             //
-    friend BigInt operator*(BigInt a,BigInt b);             //
-    friend BigInt operator/(BigInt a,BigInt b);             //
-    friend ostream& operator<<(ostream& out,BigInt& a);     //
-    friend istream& operator>>(istream& in,BigInt& a);      //
+    friend BigInt operator+(BigInt a,BigInt b);             //重载加法
+    friend BigInt operator-(BigInt a,BigInt b);             //重载减法
+    friend BigInt operator*(BigInt a,BigInt b);             //重载乘法
+    friend BigInt operator/(BigInt a,BigInt b);             //重载除法
+    friend ostream& operator<<(ostream& out,BigInt& a);     //重载输入
+    friend istream& operator>>(istream& in,BigInt& a);      //重载输出
     friend int SizeJudge(BigInt a,BigInt b);                //
 
     BigInt operator=(BigInt a);                             //
@@ -33,6 +26,7 @@ private:
     vector<int> vec;
     int negative;                                           //0为正，1为负
 };
+
 
 BigInt::BigInt()
 {
@@ -42,7 +36,7 @@ BigInt::BigInt()
 
 BigInt::BigInt(long int s)
 {
-    if(s<0)
+    if(s < 0)
     {
         negative = 1;
         s = -s;
@@ -64,21 +58,24 @@ BigInt::BigInt(string str)
     if(str[0] == '-')
     {
         negative = 1;
-        str = str.substr(1,str.size()-1);
+        str = str.substr(1, str.size() - 1);
     }
     else
         negative = 0;
-    for(int i=str.size()-1;i>=0;i--)
+
+    for(int i = str.size() - 1; i >= 0; i-- )
     {
         vec.push_back(str[i]-'0');
     }
 }
+
 
 BigInt::BigInt(const BigInt& a)
 {
     vec = a.vec;
     negative = a.negative;
 }
+
 
 BigInt BigInt::operator=(BigInt a)
 {
@@ -87,9 +84,10 @@ BigInt BigInt::operator=(BigInt a)
     return *this;
 }
 
+
 ostream& operator<<(ostream& out,BigInt& a)
 {
-    string str="";
+    string str = "";
     int judge = 0;
     if((a.vec[a.vec.size()-1]+'0') == '-')
         judge = 1;
@@ -105,10 +103,10 @@ ostream& operator<<(ostream& out,BigInt& a)
     return out;
 }
 
-istream& operator>>(istream& in,BigInt& a)
+istream& operator >> (istream& in,BigInt& a)
 {
     string str="";
-    in>>str;
+    in >> str;
     a.vec.clear();
     for(int i=str.size()-1;i>=0;i--)
     {

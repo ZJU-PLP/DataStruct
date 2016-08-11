@@ -1,6 +1,6 @@
-CPPFLAGS= -Iinclude
-CFLAGS= -g -Wall
-CC=g++
+CPPFLAGS = -Iinclude
+CFLAGS = -g -Wall
+CC = g++
 
 src = $(wildcard *.cpp)
 obj = $(patsubst %.cpp,%.o,$(src))

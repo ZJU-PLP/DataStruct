@@ -16,11 +16,13 @@ bool satisfyQueenRequirements(int *, int);
 
 int queens(int n)           //n皇后问题
 {
-    static int solutionN = 0;
+    int solutionN = 0;
     int *ColumnIndex = new int[n];
     for(int i = 0; i < n; i++)
         ColumnIndex[i] = i;
+    
     permutation(ColumnIndex, 0, n, solutionN);
+    
     return solutionN;
 }
 
@@ -28,8 +30,10 @@ int queens(int n)           //n皇后问题
 void permutation(int *ColumnIndex, int start, int n, int &solutionNumber)
 {        
     if(ColumnIndex == NULL) return;
+
     if(start == n-1)
     {
+        //检查输出
         if(satisfyQueenRequirements(ColumnIndex, n))
         {
             solutionNumber++;
@@ -39,6 +43,7 @@ void permutation(int *ColumnIndex, int start, int n, int &solutionNumber)
         }
         return;
     }
+
     for(int i = start; i<n; i++)
     {
         int temp = ColumnIndex[start];

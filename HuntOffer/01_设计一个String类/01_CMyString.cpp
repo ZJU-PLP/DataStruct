@@ -1,11 +1,3 @@
-/*************************************************************************
-	> File Name: CMyString.cpp
-	> Author: Robin 
-	> Mail: chou_robin@163.com
-	> Created Time: 2016年06月17日 星期五 10时37分14秒
-    > from 剑指offer
- ************************************************************************/
-
 #include<iostream>
 #include<string.h>
 using namespace std;
@@ -89,7 +81,6 @@ int main()
     str1 = str2;
 //    cout << str1.m_pData << endl;
 //    cout << str2.m_pData << endl;
-
     return 0;
 }
 

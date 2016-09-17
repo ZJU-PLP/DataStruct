@@ -8,7 +8,7 @@ struct ListNode
 	ListNode* m_pNext;
 };
 
-
+//尾插元素
 void AddToTail(ListNode** pHead, int value)
 {
 	ListNode* pNew = new ListNode;
